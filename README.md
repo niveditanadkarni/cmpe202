@@ -31,3 +31,7 @@ Notes and Exclusions:
 Static and Abstract Notation:  Static and Abstract notation in UML are usually denoted as "underline" and "italic", but rarely used in practice.  Parsing this is not a requirement for this project.
 Relationships Between Interfaces:  Although conceptually possible in UML, relationships between Interfaces (i.e. inheritance, dependencies) are rarely thought of in practice and generally bad practice.  As such, this project does not expect parser to detect these situations.  Focus your work on the relationships and dependencies from Classes to Interfaces.
 For Additional Pointers on UML Notation, see lecture notes and http://www.uml-diagrams.org/class-reference.html (Links to an external site.) 
+
+UML Parser: A Java code parser which takes Java code file as input and gives the UML class diagram as the output based on the code.
+
+UMLGraph: UMLGraph is an open source code that can be used for the drawing of UML class and sequence diagrams and the reverse engineering of class diagrams from Java source code.
