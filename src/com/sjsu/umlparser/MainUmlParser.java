@@ -8,7 +8,7 @@ import java.nio.file.Path;
 
 public class MainUmlParser {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 		String file = "Users/niveditanadkarni/cmpe202-master/umlparser/uml-parser-test-1/A.java";
 		System.out.println(file);
