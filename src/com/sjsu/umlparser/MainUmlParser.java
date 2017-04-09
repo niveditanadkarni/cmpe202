@@ -12,7 +12,10 @@ public class MainUmlParser {
 		// TODO Auto-generated method stub
 		String file = "Users/niveditanadkarni/cmpe202-master/umlparser/uml-parser-test-1/A.java";
 		System.out.println(file);
-		
+		File f = new File(file);
+		if(f.exists() && !f.isDirectory()) { 
+		    // do something
+		}
 		//if (!file.isDirectory())
 		//{
 		//	 file = file.getParentFile();
