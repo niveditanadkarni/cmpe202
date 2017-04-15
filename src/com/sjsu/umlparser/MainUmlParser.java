@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.ArrayList;
 
 
@@ -13,7 +12,6 @@ public class MainUmlParser {
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 		String file = "Users/niveditanadkarni/cmpe202-master/umlparser/uml-parser-test-1/A.java";
-		
 		System.out.println(file);
 		File f = new File(file);
 		if(f.exists() && !f.isDirectory()) { 
@@ -36,7 +34,6 @@ public class MainUmlParser {
 						try {
 							in.close();
 						} catch (IOException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 					}
