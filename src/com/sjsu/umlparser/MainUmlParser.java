@@ -10,9 +10,6 @@ import java.util.ArrayList;
 
 public class MainUmlParser {
 
-	//private static File files= null;
-	//private static File[] listoffiles= null;
-	
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 		String file = "Users/niveditanadkarni/cmpe202-master/umlparser/uml-parser-test-1/A.java";
@@ -32,8 +29,6 @@ public class MainUmlParser {
 				FileInputStream in = new FileInputStream(file);
 				ArrayList<String> tokenisation = new ArrayList<String>();
 				if ((classname.getName().contains(".java"))) {
-
-					//File file = new File(classname.getPath());
 				}
 
 					
