@@ -1,8 +1,5 @@
 package com.sjsu.umlparser;
 
-import japa.parser.JavaParser;
-import japa.parser.ast.CompilationUnit;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -41,16 +38,16 @@ public class MainUmlParser {
 
 					
 					else{
-						in.close();
+						try {
+							in.close();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 					}
-		//if (!file.isDirectory())
-		//{
-		//	 file = file.getParentFile();
-		//}
-				
-	
 		}
 	}
-		
+}
 	
+		
