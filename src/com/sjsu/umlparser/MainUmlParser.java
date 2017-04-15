@@ -32,28 +32,25 @@ public class MainUmlParser {
 			/* array of class names */
 
 			for (File classname : input_javafiles) {
-
+				FileInputStream in = new FileInputStream(file);
 				ArrayList<String> tokenisation = new ArrayList<String>();
 				if ((classname.getName().contains(".java"))) {
 
 					//File file = new File(classname.getPath());
+				}
 
-					FileInputStream in = new FileInputStream(file);
-					CompilationUnit cu;
-					try {
-
-						cu = JavaParser.parse(in, "UTF8");
-					}
-
-					finally {
+					
+					else{
 						in.close();
+					}
 					}
 		//if (!file.isDirectory())
 		//{
 		//	 file = file.getParentFile();
 		//}
 				
-	}
-			}
+	
 		}
+	}
+		
 	
