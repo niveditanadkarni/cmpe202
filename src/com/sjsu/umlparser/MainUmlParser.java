@@ -16,6 +16,7 @@ public class MainUmlParser {
 		if(f.exists() && !f.isDirectory()) { 
 		    // do something
 		}
+		
 		File input_directory = new File(args[0]);
 		File[] input_javafiles = input_directory.listFiles();
 		if (input_javafiles != null) {
