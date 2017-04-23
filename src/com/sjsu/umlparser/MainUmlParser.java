@@ -36,7 +36,6 @@ public class MainUmlParser {
 
 				ArrayList<String> tokenisation = new ArrayList<String>();
 				if ((classname.getName().contains(".java"))) {
-					System.out.println("hi");
 					File file = new File(classname.getPath());
 
 					FileInputStream in = new FileInputStream(file);
