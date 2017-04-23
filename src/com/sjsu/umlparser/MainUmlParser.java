@@ -39,7 +39,6 @@ public class MainUmlParser {
 					FileInputStream in = new FileInputStream(file);
 					CompilationUnit cu;
 					try {
-
 						cu = JavaParser.parse(in, "UTF8");
 					}
 
