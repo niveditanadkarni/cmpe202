@@ -29,7 +29,6 @@ public class MainUmlParser {
 		File input_directory = new File(args[0]);
 		File[] input_javafiles = input_directory.listFiles();
 		if (input_javafiles != null) {
-			System.out.println("hi");
 			/* array of class names */
 
 			for (File classname : input_javafiles) {
