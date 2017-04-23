@@ -1,3 +1,12 @@
+import japa.parser.JavaParser;
+import japa.parser.ast.CompilationUnit;
+import japa.parser.ast.body.ClassOrInterfaceDeclaration;
+import japa.parser.ast.body.ConstructorDeclaration;
+import japa.parser.ast.body.FieldDeclaration;
+import japa.parser.ast.body.MethodDeclaration;
+import japa.parser.ast.body.TypeDeclaration;
+import japa.parser.ast.type.ClassOrInterfaceType;
+import japa.parser.ast.visitor.VoidVisitorAdapter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -123,7 +132,7 @@ public class MainUmlParser {
 			System.out.println(s);
 			// String destination=args[1];
 			String destination = args[1];
-			UMLgenerate p = new UMLgenerate();
+			UMLgenerator p = new UMLgenerator();
 			p.umlCreator(s, destination);
 			System.out.println("Diagram successfully generated\n");
 
