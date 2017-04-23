@@ -30,7 +30,6 @@ public class MainUmlParser {
 		File[] input_javafiles = input_directory.listFiles();
 		if (input_javafiles != null) {
 			/* array of class names */
-
 			for (File classname : input_javafiles) {
 
 				ArrayList<String> tokenisation = new ArrayList<String>();
