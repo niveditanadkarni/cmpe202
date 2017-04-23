@@ -41,7 +41,6 @@ public class MainUmlParser {
 					try {
 						cu = JavaParser.parse(in, "UTF8");
 					}
-
 					finally {
 						in.close();
 					}
