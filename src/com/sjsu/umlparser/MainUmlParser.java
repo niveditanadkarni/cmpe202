@@ -1,3 +1,5 @@
+package com.sjsu.umlparser;
+
 import japa.parser.JavaParser;
 import japa.parser.ast.CompilationUnit;
 import japa.parser.ast.body.ClassOrInterfaceDeclaration;
@@ -7,11 +9,13 @@ import japa.parser.ast.body.MethodDeclaration;
 import japa.parser.ast.body.TypeDeclaration;
 import japa.parser.ast.type.ClassOrInterfaceType;
 import japa.parser.ast.visitor.VoidVisitorAdapter;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
-import javax.rmi.ssl.SslRMIClientSocketFactory;
+
+import com.sjsu.umlparser.UMLgenerator;
 
 public class MainUmlParser {
 
@@ -25,11 +29,12 @@ public class MainUmlParser {
 
 	public static void main(String[] args) throws Exception {
 		// creates an input stream for the file to be parsed
-
+		System.out.println("inside");
 		File input_directory = new File(args[0]);
 		File[] input_javafiles = input_directory.listFiles();
 		if (input_javafiles != null) {
 			/* array of class names */
+			System.out.println("inside");
 			for (File classname : input_javafiles) {
 
 				ArrayList<String> tokenisation = new ArrayList<String>();
