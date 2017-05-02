@@ -18,6 +18,7 @@ import java.util.List;
 public class MainUmlParser {
 
 	public static String s = "@startuml\nskinparam classAttributeIconSize 0 \n";
+	
 	public static String current_class;
 	public static ArrayList<String> parser_classes = new ArrayList<String>();
 	public static ArrayList<String> association_variables = new ArrayList<String>();
@@ -45,8 +46,7 @@ public class MainUmlParser {
 					finally {
 						in.close();
 					}
-					String temp = cu.toString();
-
+					String temp = cu.toString(); 
 					ArrayList<String> inputFile_line = new ArrayList<String>();
 
 					String lines[] = temp.split("\\r?\\n");
@@ -114,11 +114,11 @@ public class MainUmlParser {
 				}
 			}
 			s = s + "@enduml\n";
-			//System.out.println(s);
+			System.out.println(s);
 			String destination = args[1];
 			UMLgenerator p = new UMLgenerator();
 			p.umlCreator(s, destination);
-			System.out.println("Diagram successfully generated\n");
+			System.out.println("Class Diagram is generated\n");
 
 		}
 

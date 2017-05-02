@@ -8,7 +8,7 @@ import java.io.OutputStream;
 import net.sourceforge.plantuml.SourceStringReader;
 
 public class UMLgenerator {
-public  void umlCreator(String source,String destination) {
+public  void umlCreator(String source, String destination) {
 		
 		OutputStream image = null;
 		try {
