@@ -15,8 +15,6 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sjsu.umlparser.UMLgenerator;
-
 public class MainUmlParser {
 
 	public static String s = "@startuml\nskinparam classAttributeIconSize 0 \n";
