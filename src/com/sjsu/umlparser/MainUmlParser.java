@@ -26,7 +26,6 @@ public class MainUmlParser {
 	public static ArrayList<String> get_set_variables = new ArrayList<String>();
 
 	public static void main(String[] args) throws Exception {
-		// creates an input stream for the file to be parsed
 		System.out.println("inside");
 		File input_directory = new File(args[0]);
 		File[] inputfiles = input_directory.listFiles();
@@ -221,7 +220,6 @@ public class MainUmlParser {
 				s = s + "\n";
 			}
 
-			/* New code for uses START */
 			ArrayList<String> tokenisation = new ArrayList<String>();
 			if (n.getBody() != null) {
 				String temp = n.getBody().toString();
@@ -286,7 +284,6 @@ public class MainUmlParser {
 
 		@Override
 		public void visit(ClassOrInterfaceDeclaration decl, Object arg) {
-			// Make class extend//
 
 			List<ClassOrInterfaceType> list = decl.getExtends();
 			if (list == null)
@@ -303,9 +300,9 @@ public class MainUmlParser {
 	private static class parser_implementsFunctionality extends VoidVisitorAdapter {
 
 		@Override
-		public void visit(ClassOrInterfaceDeclaration decl, Object arg) {
+		public void visit(ClassOrInterfaceDeclaration d, Object arg) {
 
-			List<ClassOrInterfaceType> list = decl.getImplements();
+			List<ClassOrInterfaceType> list = d.getImplements();
 			if (list == null)
 				return;
 			for (ClassOrInterfaceType k : list) {
@@ -323,18 +320,11 @@ public class MainUmlParser {
 
 			if ((parser_classes).contains(n.getType().toString())) {
 				String relation = current_class + n.getType().toString();
-				// class_interface_associations.add(relation);
-				/*
-				 * Code to reverse string START
-				 */
+				
 				String input = relation;
 				StringBuilder input1 = new StringBuilder();
 				input1.append(input);
 				input1 = input1.reverse();
-
-				/*
-				 * Code to reverse string END
-				 */
 
 				if (((class_interface_associations).contains(input1.toString()))) {
 
@@ -346,9 +336,7 @@ public class MainUmlParser {
 				String[] coll;
 				coll = n.getType().toString().split("[<>]");
 				String relation = current_class + coll[1];
-				/*
-				 * Code to reverse string START
-				 */
+				
 				String input = relation;
 				StringBuilder reverse_relation = new StringBuilder();
 				reverse_relation.append(input);
