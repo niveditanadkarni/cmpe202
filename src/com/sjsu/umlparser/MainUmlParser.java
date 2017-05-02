@@ -115,7 +115,7 @@ public class MainUmlParser {
 			}
 			s = s + "@enduml\n";
 			System.out.println(s);
-			String destination = args[1];
+			String destination = args[0]+ "/"+args[1];
 			UMLgenerator p = new UMLgenerator();
 			p.umlCreator(s, destination);
 			System.out.println("Class Diagram is generated\n");
