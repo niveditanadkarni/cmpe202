@@ -29,11 +29,11 @@ public class MainUmlParser {
 		// creates an input stream for the file to be parsed
 		System.out.println("inside");
 		File input_directory = new File(args[0]);
-		File[] input_javafiles = input_directory.listFiles();
-		if (input_javafiles != null) {
+		File[] inputfiles = input_directory.listFiles();
+		if (inputfiles != null) {
 			/* array of class names */
 			System.out.println("inside");
-			for (File classname : input_javafiles) {
+			for (File classname : inputfiles) {
 
 				ArrayList<String> tokenisation = new ArrayList<String>();
 				if ((classname.getName().contains(".java"))) {
@@ -63,12 +63,10 @@ public class MainUmlParser {
 							}
 						}
 					}
-					// int i=0;
 					for (int k = 0; k < tokenisation.size(); k++) {
 						if (tokenisation.get(k).contains("class")) {
 							current_class = tokenisation.get(k + 1);
 							parser_classes.add(current_class);
-							// uses_class_interface_associations.add(current_class);
 						}
 						if (tokenisation.get(k).contains("interface")) {
 							current_class = tokenisation.get(k + 1);
@@ -80,9 +78,8 @@ public class MainUmlParser {
 
 				}
 			}
-			/* array of class names end */
 
-			for (File classname : input_javafiles) {
+			for (File classname : inputfiles) {
 
 				if ((classname.getName().contains(".java"))) {
 
@@ -100,21 +97,14 @@ public class MainUmlParser {
 					String lines[] = temp.split("\\r?\\n");
 					String delimitor = "[ .,?!]+";
 					String[] tokenisation = lines[0].split(delimitor);
-
 					List types = cu.getTypes();
-
 					List types1 = cu.getTypes();
-
 					TypeDeclaration typeDec = (TypeDeclaration) types.get(0);
-
 					current_class = typeDec.getName();
-
 					if (tokenisation[1].equals("interface"))
 						s = s + "interface" + " " + current_class + "\n";
 					if (tokenisation[1].equals("class"))
 						s = s + "class" + " " + current_class + "\n";
-					// visit and print the methods names
-
 					new Parser_GetSetVariables().visit(cu, null);
 					new Parser_FieldDeclaration().visit(cu, null);
 					new parser_ConstructionDeclaration().visit(cu, null);
@@ -126,7 +116,7 @@ public class MainUmlParser {
 				}
 			}
 			s = s + "@enduml\n";
-			System.out.println(s);
+			//System.out.println(s);
 			String destination = args[1];
 			UMLgenerator p = new UMLgenerator();
 			p.umlCreator(s, destination);
@@ -314,7 +304,6 @@ public class MainUmlParser {
 
 		@Override
 		public void visit(ClassOrInterfaceDeclaration decl, Object arg) {
-			// Make class extend Blah.
 
 			List<ClassOrInterfaceType> list = decl.getImplements();
 			if (list == null)
