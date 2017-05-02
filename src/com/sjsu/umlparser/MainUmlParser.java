@@ -30,7 +30,6 @@ public class MainUmlParser {
 		File input_directory = new File(args[0]);
 		File[] inputfiles = input_directory.listFiles();
 		if (inputfiles != null) {
-			/* array of class names */
 			System.out.println("inside");
 			for (File classname : inputfiles) {
 
